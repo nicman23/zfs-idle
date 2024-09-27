@@ -1,0 +1,12 @@
+[Unit]
+Description=spin
+After=network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/local/bin/hd-idle-zfs.sh
+ExecStop=/bin/partprobe
+
+[Install]
+WantedBy=multi-user.target
